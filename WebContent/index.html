@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type = "text/javascript" 
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+         
+<script type = "text/javascript" >
+         $(document).ready(function() {
+               $.ajax({
+                       url: 'https://webapps-qa.homedepot.com/gridstats/rs/containerInfo/containerDetails?container=mmmfRLMSeasonalOnboardingBatch&host=gsqa0103&store=Seasonal+Onboarding&callback=?',
+                       dataType: 'jsonp',
+                       contentType:'text/plain',
+                       success: function(data) {
+                           //called when successful
+                             console.log(data);
+                       },
+                       error: function(e,t) {
+                           //called when there is an error
+                           console.log(e+""+t);
+                           console.log(JSON.stringify(e));
+                       }
+                     });
+               $.getJSON("https://webapps-qa.homedepot.com/gridstats/rs/containerInfo/containerDetails?container=mmmfRLMSeasonalOnboardingBatch&host=gsqa0103&store=Seasonal+Onboarding&callback=?", function(result){
+            	   //response data are now in the result variable
+            	   alert(result);
+            	});
+         });
+         </script>    
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+</body>
+</html>
